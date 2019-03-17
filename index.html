@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<style>
+.center {
+    text-align: center;
+}
+</style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Equalizer</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <html lang="en">
+  <head>
+    <title>Equalizer</title>
+  </head>
+<body>
+
+<main>
+
+  <div class="presets" id="guibackground">
+
+    <div align="center">
+      <br />
+      <br />
+      <br />
+    <audio autoplay id="player" controls crossorigin="anonymous" loop>
+        Your browser does not support the audio tag.  </audio>
+    </div>
+  <table cellspacing="10">
+  <tr>
+    <td align="center">
+    <div class="controls">
+      <!-- <label>60Hz</label> -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 0);"></input>
+    </div>
+
+    </td>
+
+    <td align="center">
+    <div class="controls">
+      <!-- <label>170Hz</label> -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 1);"></input>
+    </div>
+    </td>
+
+    <td align="center">
+    <div class="controls">
+      <!-- 350HZ -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 2);"></input>
+    </div>
+    </td>
+
+    <td align="center">
+    <div class="controls">
+      <!-- <label>1000Hz</label> -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 3);"></input>
+    </div>
+    </td>
+
+    <td align="center">
+    <div class="controls">
+      <!-- <label>3500Hz</label> -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 4);"></input>
+    </div>
+    </td>
+
+    <td align="center">
+    <div class="controls">
+      <!-- <label>10000Hz</label> -->
+      <input type="range" orient="vertical" value="0" step="1" min="-30" max="30" oninput="changeGain(this.value, 5);"></input>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <label>60</label>
+    </td>
+    <td align="center">
+      <label>170</label>
+    </td>
+    <td align="center">
+      <label>350</label>
+    </td>
+    <td align="center">
+      <label>1000</label>
+    </td>
+    <td align="center">
+      <label>3500</label>
+    </td>
+    <td align="center">
+      <label>10000</label>
+    </td>
+  </tr>
+  </table>
+
+</main>
+  </div>
+
+</body>
+</div>
+</html>
+
+    <script  src="js/index.js"></script>
+    <script>
+
+        reset.addEventListener("click", function(event) {
+        changeGain(0,0);
+        changeGain(0,1);
+        changeGain(0,2);
+        changeGain(0,3);
+        changeGain(0,4);
+        changeGain(0,5);
+        console.log("a");
+        });
+
+        lowpass.addEventListener("click", function(event) {
+        changeGain(30,0);
+        changeGain(25,1);
+        changeGain(20,2);
+        changeGain(0,3);
+        changeGain(-25,4);
+        changeGain(-30,5);
+        });
+
+        lowshelf.addEventListener("click", function(event) {
+        changeGain(-30,0);
+        changeGain(-25,1);
+        changeGain(-0,2);
+        changeGain(20,3);
+        changeGain(25,4);
+        changeGain(30,5);
+        });
+
+        highpass.addEventListener("click", function(event) {
+        changeGain(-15,0);
+        changeGain(-15,1);
+        changeGain(-15,2);
+        changeGain(30,3);
+        changeGain(30,4);
+        changeGain(30,5);
+        });
+
+        highshelf.addEventListener("click", function(event) {
+        changeGain(30,0);
+        changeGain(30,1);
+        changeGain(30,2);
+        changeGain(-15,3);
+        changeGain(-15,4);
+        changeGain(-15,5);
+        });
+
+        random.addEventListener("click", function(event) {
+        for(var i = 0; i < 6; i++){
+          var num = Math.floor(Math.random()*30) + 1;
+          num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+          changeGain(num,i);
+        }});
+
+</script>
+
+
+
+</body>
+
+</html>

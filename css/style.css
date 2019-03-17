@@ -1,0 +1,84 @@
+
+
+div audio {
+  position: relative;
+  display: block;
+}
+* {
+  outline: none;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+body {
+  margin: 0;
+  padding: 10px;
+  min-height: 400px;
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font: 16px sans-serif;
+  background: radial-gradient(white, #CAD1EC);
+}
+@media (min-height: 500px) {
+  body {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+
+label {
+    cursor: pointer;
+    color: #FB4D62;
+    display: block;
+    padding: 10px;
+    margin: 3px;
+}
+
+#guibackground {
+    border-radius: 25px;
+    background: white;
+    padding: 20px;
+    width: 475px;
+    height: 400px;
+    box-shadow: 5px 10px 5px #FEDADE;
+}
+#guibackground:before {
+    display: block;
+    line-height: 0;
+}
+
+#guibackground:after {
+    display: block;
+    line-height: 0;
+    background: url(rs-bottomright.png) bottom right no-repeat;
+    content: url(rs-bottomleft.png) }
+
+input[type=range][orient=vertical]
+{
+    display:inline-block;
+    vertical-align:middle;
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 1px;
+    height: 175px;
+    padding: 0 5px;
+}
